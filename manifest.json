@@ -1,16 +1,16 @@
 {
-  "manifest_version": 3,
-  "name": "ElevenLabs TTS Reader",
-  "version": "1.0",
-  "description": "Read web page content using ElevenLabs Text-to-Speech API",
-  "permissions": ["activeTab", "storage"],
-  "action": {
-    "default_popup": "index.html"
-  },
-  "content_scripts": [
-    {
+    "manifest_version": 3,
+    "name": "Audium",
+    "version": "1.0",
+    "description": "Text-to-speech extension using ElevenLabs API",
+    "permissions": ["contextMenus", "storage", "activeTab", "scripting"],
+    "action": {},
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [{
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ]
-}
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }]
+  }
